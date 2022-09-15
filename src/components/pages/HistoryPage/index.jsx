@@ -22,6 +22,13 @@ function History() {
       setIndex(lastIndex)
     }
   },[index])
+  useEffect(()=>{
+    const slider = setInterval(()=>{
+      setIndex(newIndex=> newIndex + 1)
+    },3000)
+    return ()=> clearInterval(slider)
+  },[index])
+  
   return (
     <div className=" relative">
       <section className="w-full h-100">
@@ -30,8 +37,7 @@ function History() {
                     <div className="history-left">
                         <div>
                             <a href="../index.html">
-                                <div className="arrow-left">
-                                    &#8592
+                                <div className="arrow-left flex items-center justify-center">
                                     <BsArrowLeft/>
                                 </div>
                             </a>
@@ -40,7 +46,7 @@ function History() {
                             History
                         </h2>
                         <div className="kingship-badge  flex justify-center items-center relative">
-                         <div key={id} className="badge-container" style={{backgroundImage: `url(${image})`}}/>
+                         <div key={id} className="badge-container" style={{backgroundImage: `url(${image})`}}>
                             <button 
                               className="crest-btn next" 
                               onClick={()=> setIndex(index + 1)}>
@@ -53,9 +59,10 @@ function History() {
                               </button>
                         </div>
                     </div>
-                </div>
-                <div className="w-full lg:w-3/5 ">
-                    <div className="history-right">
+                    </div>
+              </div>
+              <div className="w-full lg:w-3/5 ">
+                  <div className="history-right">
                         <div className="history-header">
                             <Text type='h2' className="font-bold history-desktop">
                                 History
@@ -151,8 +158,9 @@ function History() {
                                 </Text>
                             </div>
                         </article>
-                    </div>
-                </div>
+                  </div>
+              </div>
+                
             </div>
 
         </section>
