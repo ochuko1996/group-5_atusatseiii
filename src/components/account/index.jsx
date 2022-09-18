@@ -1,70 +1,60 @@
 
 import React from 'react';
-import "./Index.css"
-function index() {
-  return (
-    <section className="container">
- <Image />
-<FormPage />
-<LastInput />
-</section>
-    )
+
+import './index.css'
+const FirstComponent = ()=>{
+  return(
+    <section className='main-component'>
+   <Image />
+   <FormPage />
+   
+    </section>
+  )
 }
+
+const Image = ()=>  <div className='image'><img  src="Capture.PNG" alt=''  /></div>
+
+
 
 const FormPage = () =>{
-    return (
-        <>
-         <Text />
-        <Form />
-        </>
-       
-    )
+  return(
+    <section className='formpage'>
+    <Text />
+    <Form />
+  
+    </section>
+  )
 }
 
-const Image = () => <img src="C:\Users\charles\Desktop\project\group-5_atusatseiii\src\assets" />
-const Text = () => {
-    return(
- <div>
-     <div>
-     <h1>Login</h1>
-     <P>Your details are kept safe and with it you can always gain access!
-</P>
-     </div>
- </div>
-    )
+const Text = () =>{
+return(
+  <div className='text'>
+    <h1>Login</h1>
+    <p>Your details are kept safe and with it you can always gain access!</p>
+  </div>
+)
 }
 
 const Form = () =>{
-    const handleSubmit = (e) =>{
-  e.preventDefault();
-  console.log("this is my work")
-    }
-    return (
-        <>
-       <form className='form'>
-           <input type = "text" placeholder='email' className='input'/>
-           <input type="text" placeholder='password' className='input'/>
-           <button type="submit" className='btn' onClick={handleSubmit}>Login</button>
-           <a href='#'>Not Registered? Sign Up</a>
-           
-    </form> 
-        
-        </>
-    )
-}
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    console.log("awesome work well-done")
+  }
+  return(
+    <>
+    <form className='form'>
+      <input type="text" placeholder='email' className='input'/>
+      <input type="text" placeholder='password' className='input'/>
+      <button type='submit' onClick={handleSubmit} className='btn'>Login</button>
 
-const LastInput = () =>{
-    return (
-        <>
-       <div className='last-input'><a href='#'>Change Password</a></div>
-        </>
-    )
-}
+      <a href='#'>Not Registered? Sign Up</a>
+      <a href='#' className='last-input'>Change Password </a>
+    </form>
+    </>
+  )
+};
 
+  
 
-
-//     </div>
-//   );
-// }
 
 export default index;
