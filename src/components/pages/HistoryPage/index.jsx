@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-import {BsArrowLeft} from 'react-icons/bs'
+// import {BsArrowLeft} from 'react-icons/bs'
 
 import Text from '../../atom/Text'
 import NavFooter from '../../molecules/NavFooter'
@@ -8,26 +8,27 @@ import NavToggle from '../../molecules/NavToggle'
 import RedFooterNav from '../../molecules/RedFooterNav'
 
 import {profileOfOba} from '../../crest-list'
-function History() {
+// import { Link } from 'react-router-dom'
+import ArrowLeft from '../../atom/ArrowLeft'
+function History({showFooter, setShowFooter}) {
   // const [people, setPeople] = useState(profileOfOba)
   const [index, setIndex] = useState(0)
   const {id, image} = profileOfOba[index]
 
-  useEffect(()=>{
-    const lastIndex = profileOfOba.length-1
-    if(index === lastIndex){
-      setIndex(0)
-    }
-    if(index < 0){
-      setIndex(lastIndex)
-    }
-  },[index])
+      const lastIndex = profileOfOba.length-1
+
+const nextSlide = ()=> {
+    setIndex( index === lastIndex ? 0 : index + 1)
+}
+const prevSlide = ()=> {
+    setIndex( index === 0 ? lastIndex : index - 1)
+}
   useEffect(()=>{
     const slider = setInterval(()=>{
-      setIndex(newIndex=> newIndex + 1)
+     setIndex( index === lastIndex ? 0 : index + 1)
     },3000)
     return ()=> clearInterval(slider)
-  },[index])
+  },[index,lastIndex])
   
   return (
     <div className=" relative">
@@ -35,13 +36,7 @@ function History() {
             <div className="block lg:flex">
                 <div className="w-full lg:w-2/5 relative">
                     <div className="history-left">
-                        <div>
-                            <a href="../index.html">
-                                <div className="arrow-left flex items-center justify-center">
-                                    <BsArrowLeft/>
-                                </div>
-                            </a>
-                        </div>
+                        <ArrowLeft/>
                         <h2 className="history-mobile font-bold">
                             History
                         </h2>
@@ -49,12 +44,12 @@ function History() {
                          <div key={id} className="badge-container" style={{backgroundImage: `url(${image})`}}>
                             <button 
                               className="crest-btn next" 
-                              onClick={()=> setIndex(index + 1)}>
+                              onClick={nextSlide}>
                                 &gt;
                             </button>
                             <button 
                               className="crest-btn prev" 
-                              onClick={()=> setIndex(index - 1)} >
+                              onClick={prevSlide} >
                                 &lt;
                               </button>
                         </div>
@@ -164,8 +159,12 @@ function History() {
             </div>
 
         </section>
-      <NavToggle/>
-      {/* <NavFooter/> */}
+      <NavToggle setShowFooter={setShowFooter}/>
+      {
+        showFooter 
+        &&
+        <NavFooter setShowFooter={setShowFooter}/>
+      }
       <RedFooterNav/>
     </div>
   )

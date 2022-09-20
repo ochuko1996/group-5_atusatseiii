@@ -1,0 +1,119 @@
+.bg-trad {
+    background-image: url(../../../assets/awala-crowning.e4684fdac1c76f0f00a8.png);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.arrow-left {
+    top: 14px;
+    width: 28px;
+    height: 28px;
+}
+
+.chief-container {
+    overflow-y: auto;
+    max-height: 65vh;
+
+}
+
+.chief-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chief-container::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: #cccaca;
+}
+
+.chief-container::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: var(--clr-red);
+    display: none;
+}
+
+.chief-container::-webkit-scrollbar-thumb:hover {
+    display: block;
+}
+
+.chief-card {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.chief-card:hover {
+    background-color: var(--clr-red);
+    transition: all 200ms;
+}
+
+.chief-card:hover h5 {
+    color: var(--clr-white);
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .ginuwa-main-dp {
+        display: none;
+    }
+
+    .sm-dp-profile .ginuwa-crest-display {
+        display: flex;
+        max-height: 80vh;
+        flex-direction: column;
+        padding: 24px;
+
+    }
+
+    .sm-dp-profile {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        z-index: 900;
+        top: 0;
+        height: 100vh;
+        background-color: var(--clr-gray);
+        padding: 14px;
+
+    }
+
+    .show-sm-dp {
+        display: flex;
+    }
+
+    .bk {
+        width: 40px;
+        height: 40px;
+        background-color: #eeeeee;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    .ginuwa-container .col-lg-5 {
+        display: none;
+    }
+
+    .ginuwa-crest {
+        align-items: stretch;
+    }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {}

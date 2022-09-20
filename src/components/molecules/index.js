@@ -1,3 +1,7 @@
 // const NavBar = require('./NavBar')
-import * as nav from './NavBar'
-import * as HeroText from './HeroText'
+export *  from './NavBar'
+export * from './HeroText'
+export * from './NavFooter'
+export * from './NavMenu'
+export * from './NavToggle'
+export * from './RedFooterNav'

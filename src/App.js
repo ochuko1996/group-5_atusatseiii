@@ -1,13 +1,11 @@
 import React from "react";
-// import RouterContainer from "./components/router";
-import HistoryPage from "./components/pages/HistoryPage";
+import RouterContainer from "./components/router";
 import './App.css'
 
 function App() {
   return (
     <>
-      {/* <RouterContainer/> */}
-      <HistoryPage/>
+      <RouterContainer/>
     </>
   );
 }
