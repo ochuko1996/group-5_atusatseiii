@@ -513,6 +513,8 @@ export const rulingDetails = [
         title: " The Olufusi of Warri",
         appellation: " Ogodobiri",
 
+    },
+    {
         id: 40,
         image: "../assets/traditional_council.c46b6481ee3834488048.jpg",
         name: "Chief Tunde Okoturo",

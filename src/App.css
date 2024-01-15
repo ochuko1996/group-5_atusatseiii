@@ -190,8 +190,7 @@ body{
     .nav-one {
         display: none;
     }
-    
-    .arrow-left,.nav-toggle {
+    .nav-toggle {
         display: none;
     }
 
