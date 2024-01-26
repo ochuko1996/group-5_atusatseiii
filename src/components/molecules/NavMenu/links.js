@@ -1,6 +1,6 @@
 export const links = [
     {
-        linkName: 'history', 
+        linkName: 'History', 
         link:   '/history'
     }, 
     { 

@@ -4,10 +4,10 @@ import { BsArrowLeft } from 'react-icons/bs'
 function MobileChiefDP({name, title, appellation, setShowSmallDp}) {
   return (
     <div className="sm-dp-profile">
-        <div className="sm-dp-container flex items-center">
-                <div className="flex items-center">
-                    <div>
-                        <BsArrowLeft onClick={setShowSmallDp(false)}/>
+        <div className="sm-dp-container flex  flex-col">
+                <div className="flex items-center mb-2">
+                    <div className='flex'>
+                        <BsArrowLeft className='cursor-pointer' onClick={()=> setShowSmallDp(false)}/>
                     </div>
                     <h5  style={{fontSize: "14.4px", paddingLeft:"10px"}}>
                         {name}  

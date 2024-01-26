@@ -6,6 +6,13 @@
 @import url(./components/pages/HistoryPage/history.css);
 @import url(./components/pages/TheGinuwa/theginuwa.css);
 @import url(./components/pages/TraditionalPage/trad.css);
+@layer base {
+    :root {
+        --color-danger: 211 0 2;
+        --color-secondary: 111 114 185;
+        /* ... */
+    }
+}
 :root {
     /* color */
     --clr-red: rgb(211, 0, 2);
@@ -48,7 +55,7 @@ body{
 }
 .hero{
     position: absolute;
-    top: 140px;
+    top: 220px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -63,7 +70,7 @@ body{
 .hero-title h1 {
     color: white;
     font-size: 2.1rem;
-    font-weight: bolder;
+    font-weight: 600;
     z-index: 500;
 }
 
@@ -230,22 +237,22 @@ body{
     background-position: center;
 }
 
-.event-container::-webkit-scrollbar {
+.event-container::-webkit-scrollbar, .notice-display::-webkit-scrollbar {
     width: 5px;
 }
 
-.event-container::-webkit-scrollbar-track {
+.event-container::-webkit-scrollbar-track, .notice-display::-webkit-scrollbar-track {
     border-radius: 5px;
     background: #cccaca;
 }
 
-.event-container::-webkit-scrollbar-thumb {
+.event-container::-webkit-scrollbar-thumb, .notice-display::-webkit-scrollbar-thumb {
     border-radius: 3px;
     background-color: var(--clr-red);
     display: none;
 }
 
-.event-container::-webkit-scrollbar-thumb:hover {
+.event-container::-webkit-scrollbar-thumb:hover, .notice-display::-webkit-scrollbar-thumb:hover {
     display: block;
 }
 .speechesBg{
@@ -323,6 +330,34 @@ body{
     background-color: var(--clr-gray);
     z-index: 900;
 }
+.loader-up{
+    animation: toploader 2s ease-out 1s forwards;
+    transform: translateY(0%);
+}
+@keyframes toploader {
+    0%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+}
+.loader-down{
+    animation: downloader 1s ease-out 1s forwards ;
+    transform: translateY(0%);
+}
+@keyframes downloader {
+    0%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(100%);
+        /* opacity: 0; */
+    }
+
+}
 @media (min-width: 575.98px) {}
 
 /* Small devices (landscape phones, less than 768px) */
@@ -360,7 +395,7 @@ body{
     .hero-title h1 {
         color: white;
         font-size: 3.5rem;
-        font-weight: bold;
+        font-weight: 500;
         z-index: 500;
     }
     .overlay {
@@ -370,8 +405,6 @@ body{
     .overlay.active {
         display: none;
     }
-
-
 }
 
 /* Large devices (desktops, less than 1200px) */

@@ -59,7 +59,7 @@ function TheGinuwa({showFooter, setShowFooter}) {
                                                 setSmallProf(true)    
                                             }
 
-                                            }
+                                        }
                                         >
                                         <div className="w-1/3 no-padding">
                                             <Image style={{paddingRight:"5px", width:"120px", height:"120px"}} src={image} alt=""/>

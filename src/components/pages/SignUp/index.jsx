@@ -11,8 +11,8 @@ const width = '90%'
 const borderRadius = '50px'
 
 
-function Login({showFooter, setShowFooter}) {
-
+function SignUp({showFooter, setShowFooter}) {
+    
   return (
     <div className="relative">
 
@@ -25,7 +25,7 @@ function Login({showFooter, setShowFooter}) {
 
                 <form action="" className=' form ' style={{ width: '100%', padding: '30px 0'}}>
                     <Text type='h1' className='font-bold' style={{fontSize: '2rem', width:`${width}`, marginBottom: "8px" }}>
-                        Login
+                        Sign Up
                     </Text>
                     <Text style={{width:`${width}`, fontSize: '12.8px', marginBottom: '16px'}} className=''>
                         Your details are kept safe and with it you can always gain access!
@@ -33,15 +33,10 @@ function Login({showFooter, setShowFooter}) {
                     <Input type='email' className='loginInput mb-4' placeholder="email" style={{width:`${width}`, borderRadius: `${ borderRadius}`, }}/>
                     <Input type='password'className='loginInput' placeholder='password' />
                     <Button className='text-white mb-4'>
-                        Login
+                        Sign Up
                     </Button>
-                    <Link to='/signup' className='text-center formText mb-4' style={{color:"#c3c3c3", }} >
-                        Not Registered? Sign Up
-                    </Link>
-                </form>
-                <form action="" className='form transparent'>
-                    <Link to='' className='loginInput formText text-center mb-4' style={{color:"#c3c3c3", }}>
-                        Change Password
+                    <Link to='/login' className='text-center formText mb-4' style={{color:"#c3c3c3", }} >
+                        Already Registered? Login
                     </Link>
                 </form>
             </div>
@@ -49,13 +44,9 @@ function Login({showFooter, setShowFooter}) {
         
     </section>
     <NavToggle setShowFooter={setShowFooter}/>
-    {
-        showFooter
-        &&
-        <NavFooter setShowFooter={setShowFooter}/>
-    }
+    <NavFooter showFooter={showFooter} setShowFooter={setShowFooter}/>
     </div>
   )
 }
 
-export default Login
+export default SignUp

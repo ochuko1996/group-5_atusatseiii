@@ -10,6 +10,8 @@ import Login from '../pages/LoginPage';
 import PressPage from '../pages/PressPage';
 import Account from '../pages/Account';
 import Event from '../pages/EventsPage';
+import Speeches from '../pages/Speeches';
+import SignUp from '../pages/SignUp';
 
 function RouterContainer() {
   const [showFooter, setShowFooter] = useState(false)
@@ -24,6 +26,8 @@ function RouterContainer() {
            <Route path='/account' element={<Account showFooter={showFooter} setShowFooter={setShowFooter}/>}/>
            <Route path='/press' element={<PressPage showFooter={showFooter} setShowFooter={setShowFooter}/>}/>
            <Route path='/event' element={<Event showFooter={showFooter} setShowFooter={setShowFooter}/>}/>
+           <Route path='/speeches' element={<Speeches showFooter={showFooter} setShowFooter={setShowFooter}/>}/>
+           <Route path='/signup' element={<SignUp showFooter={showFooter} setShowFooter={setShowFooter}/>}/>
         </Routes>
   )
 }

@@ -1,13 +1,15 @@
 import React,{useState} from 'react'
+
 import NavBar from '../../molecules/NavBar'
 import NavToggle from '../../molecules/NavToggle'
+import NavFooter from '../../molecules/NavFooter'
 import RedFooterNav from '../../molecules/RedFooterNav'
 import Input from '../../atom/Input'
 import Button from '../../atom/Button'
 import SingleEvent from "../../molecules/SingleEvent";
 import { events } from './event'
  
-function Event() {
+function Event({showFooter, setShowFooter}) {
   const [inputValue, setInputValue] = useState('')
   const searchEvent = (e)=>{
           setInputValue(e.target.value)
@@ -15,7 +17,8 @@ function Event() {
   return (
     <div className="relative main-section">
       <NavBar/>
-      <NavToggle/>
+      <NavToggle setShowFooter={setShowFooter}/>
+      {showFooter && <NavFooter setShowFooter={setShowFooter}/>}
       <RedFooterNav/>
       <div className="page-content">
         <header  className='flex items-center justify-between text-white flex-wrap'>
