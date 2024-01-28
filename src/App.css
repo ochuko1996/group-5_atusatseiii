@@ -330,6 +330,19 @@ body{
     background-color: var(--clr-gray);
     z-index: 900;
 }
+
+.loader-container{
+    animation: loader-container 2.1s ease-out 1s forwards;
+}
+@keyframes loader-container {
+    0%{
+        display: block;
+    }
+    100%{
+        display: none;
+    }
+
+}
 .loader-up{
     animation: toploader 2s ease-out 1s forwards;
     transform: translateY(0%);
@@ -341,6 +354,7 @@ body{
     100%{
         transform: translateY(-100%);
         opacity: 0;
+        display: none;
     }
 
 }
@@ -354,7 +368,8 @@ body{
     }
     100%{
         transform: translateY(100%);
-        /* opacity: 0; */
+        opacity: 0;
+        display: none;
     }
 
 }

@@ -1,4 +1,9 @@
-export * from "./Brand"
-export * from "./Input"
-export * from './Text'
-export * from './Button'
+import Button from "./Button"
+import Input from "./Input"
+import Text from "./Text"
+
+export {
+    Button,
+    Input,
+    Text
+}

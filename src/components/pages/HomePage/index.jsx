@@ -19,7 +19,7 @@ function Home({setShowFooter, showFooter}) {
     
     return () => {
       window.removeEventListener('load', ()=>{
-        setIsLoading(prev => prev = false)
+        setIsLoading(prev => prev = true)
       })
       
     }
